@@ -2,10 +2,6 @@
 
 **Course:** Artificial Neural Networks and Deep Learning (Politecnico di Milano) 
 
-**Team:** The Gradient Descenters 
-
-**Status:** Completed (November 2025) 
-
 ---
 
 ## 🧭 Project Overview
@@ -18,22 +14,13 @@ Our solution implements a **GRU-based architecture with Attention** and a dedica
 
 ## 👥 The Team
 
-* 
-**Alberto Occhipinti** (301511) 
-
-
-* 
-**Giulia Putelli** (302959) 
-
-
-* 
-**Matteo Morini** (308227) 
-
-
-* 
-**Tommaso Rossetti** (301319) 
-
-
+**Alberto Occhipinti**  
+ 
+**Giulia Putelli**  
+ 
+**Matteo Morini**  
+ 
+**Tommaso Rossetti** 
 
 ---
 
