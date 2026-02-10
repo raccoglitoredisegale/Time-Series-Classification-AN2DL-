@@ -52,50 +52,31 @@ Perform **Time Series Classification** to assign one of three labels to each seq
 We developed a custom **RecurrentClassifierWithAttention** model designed to process temporal and static data in parallel.
 
 ### 1. Data Preprocessing
-
-* 
+ 
 **Windowing:** We utilized a sliding window approach with a **Window Size of 44** and a **Stride of 22**, creating overlapping sequences to maximize training data.
-
-
-* 
+ 
 **Normalization:** Min-Max normalization was applied to all 35 time-series features, fitted only on the training folds to prevent leakage.
-
-
-* 
+ 
 **Categorical Mapping:** Static features (e.g., "one+peg_leg") were mapped to integers for embedding.
-
-
 
 ### 2. Model Architecture
 
 The architecture consists of three main components:
-
-* 
+ 
 **Temporal Path:** A 2-layer **GRU** (128 hidden units, 0.5 dropout) processes the time-series data.
-
-
-* 
+ 
 **Static Path:** Parallel embedding layers process the categorical features, which are then concatenated and projected via an MLP.
-
-
-* 
+ 
 **Attention Mechanism:** An Attention Encoder layer uses the GRU's final hidden state as a query to create a weighted context vector from all time steps, focusing on the most relevant parts of the sequence.
 
 
 
-### 3. Training Strategy
-
-* 
+### 3. Training Strategy 
 **Optimizer:** `AdamW` with weight decay ().
 
-
-* 
 **Loss Function:** Weighted `CrossEntropyLoss` (to handle class imbalance) + **Label Smoothing** (0.1).
 
-
-* **Validation:** 5-Fold **Stratified Group K-Fold**. This was crucial to ensure that all data from a single subject remained in one split, preventing data leakage.
-
-
+**Validation:** 5-Fold **Stratified Group K-Fold**. This was crucial to ensure that all data from a single subject remained in one split, preventing data leakage.
 
 ---
 
